@@ -23,10 +23,20 @@ class Finwipe < Formula
   end
 
   on_linux do
-    url "https://github.com/Das-rebel/finwipe/releases/download/v0.1.6/finwipe-linux-amd64"
-    sha256 "018f1e678d28ae5f62c0ee91c1da9662a693af9301fd4709985d89a9f3bb9f70"
-    def install
-      bin.install "finwipe-linux-amd64" => "finwipe"
+    on_intel do
+      url "https://github.com/Das-rebel/finwipe/releases/download/v0.1.6/finwipe-linux-amd64"
+      sha256 "018f1e678d28ae5f62c0ee91c1da9662a693af9301fd4709985d89a9f3bb9f70"
+      def install
+        bin.install "finwipe-linux-amd64" => "finwipe"
+      end
+    end
+
+    on_arm do
+      url "https://github.com/Das-rebel/finwipe/releases/download/v0.1.6/finwipe-linux-arm64"
+      sha256 "425abc6598330ceb18a8b9d1c862495c27856146d8c92dd4790ce5300161595f"
+      def install
+        bin.install "finwipe-linux-arm64" => "finwipe"
+      end
     end
   end
 
